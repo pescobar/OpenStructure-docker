@@ -22,7 +22,7 @@ This container includes OpenStructure 1.6 - http://www.openstructure.org/
    `$> docker run -ti --rm --entrypoint /bin/bash pescobar/openstructure`
 
 
-## Using the container with Singularity
+## Using the container with Singularity (recommended for HPC clusters)
 
 ### Downloading the container with Singularity
 
