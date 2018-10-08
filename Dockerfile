@@ -1,4 +1,4 @@
-FROM centos:7.3.1611
+FROM centos:7.5.1804
 MAINTAINER Pablo Escobar <pablo.escobarlopez@unibas.ch>
 
 ENV OPENSTRUCTURE_VERSION=1.6.0
