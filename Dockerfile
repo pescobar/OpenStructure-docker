@@ -1,8 +1,8 @@
 FROM centos:7.5.1804
 MAINTAINER Pablo Escobar <pablo.escobarlopez@unibas.ch>
 
-ENV OPENSTRUCTURE_VERSION=1.6.0
-ENV OPENMM_VERSION=6.1
+ENV OPENSTRUCTURE_VERSION=1.8.0
+ENV OPENMM_VERSION=7.1.1
 
 ENV PYTHONPATH="/usr/local/lib64/python2.7/site-packages/:${PYTHONPATH}"
 ENV LD_LIBRARY_PATH="/usr/local/lib64/:/usr/local/openmm/lib/:${LD_LIBRARY_PATH}"
