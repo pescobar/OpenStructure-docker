@@ -73,7 +73,7 @@ RUN wget -O openmm-${OPENMM_VERSION}.tar.gz https://github.com/pandegroup/openmm
 
 # download OpenStructure sources tarball
 WORKDIR /usr/local/src
-RUN wget -O openstructure-${OPENSTRUCTURE_VERSION}.tar.gz "https://git.scicore.unibas.ch/schwede/openstructure/repository/archive.tar.gz?ref=${OPENSTRUCTURE_VERSION}" && \
+RUN wget -O openstructure-${OPENSTRUCTURE_VERSION}.tar.gz "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/${OPENSTRUCTURE_VERSION}/openstructure-${OPENSTRUCTURE_VERSION}.tar.gz" && \
     mkdir /usr/local/src/openstructure-${OPENSTRUCTURE_VERSION}-source && \
     tar -xf openstructure-${OPENSTRUCTURE_VERSION}.tar.gz --strip-components=1 -C /usr/local/src/openstructure-${OPENSTRUCTURE_VERSION}-source && \
     mkdir /usr/local/src/openstructure-${OPENSTRUCTURE_VERSION}-source/build 
