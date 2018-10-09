@@ -10,6 +10,8 @@ ENV PYTHONPATH="/usr/local/lib64/python2.7/site-packages/:${PYTHONPATH}"
 ENV LD_LIBRARY_PATH="/usr/local/lib64/:/usr/local/openmm/lib/:${LD_LIBRARY_PATH}"
 ENV PATH="/usr/local/openmm/bin/:${PATH}"
 
+ENV CPUS_FOR_MAKE=1
+
 RUN yum makecache fast && \
     yum -y install epel-release && \
     yum -y install \
@@ -56,7 +58,7 @@ RUN wget -O swig-${SWIG_VERSION}.tar.gz https://sourceforge.net/projects/swig/fi
    tar xvf swig-${SWIG_VERSION}.tar.gz && \
    cd swig-${SWIG_VERSION}/ && \
    ./configure && \
-   make -j 8 && \
+   make -j ${CPUS_FOR_MAKE} && \
    make install 
 
 # install openmm https://github.com/pandegroup/openmm
@@ -66,7 +68,7 @@ RUN wget -O openmm-${OPENMM_VERSION}.tar.gz https://github.com/pandegroup/openmm
    mkdir /usr/local/src/openmm-${OPENMM_VERSION}/build && \
    cd /usr/local/src/openmm-${OPENMM_VERSION}/build && \
    cmake .. && \
-   make -j 8 && \
+   make -j ${CPUS_FOR_MAKE} && \
    make install 
 
 # download OpenStructure sources tarball
@@ -92,7 +94,7 @@ RUN cmake .. \
    -DFFTW_LIBRARY=/usr/lib64/libfftw3f.a \
    -DQT_QMAKE_EXECUTABLE=/usr/lib64/qt4/bin/qmake \
    -DOPTIMIZE=1 && \
-   make -j 8 && \
+   make -j ${CPUS_FOR_MAKE} && \
    make check && \
    make install 
 
