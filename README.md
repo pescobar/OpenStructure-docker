@@ -1,6 +1,6 @@
 # OpenStructure docker container
 
-This container includes OpenStructure 1.6 - http://www.openstructure.org/
+This container includes OpenStructure 1.8.0 - http://www.openstructure.org/
 
 ## Using the container with docker
 
@@ -26,26 +26,26 @@ This container includes OpenStructure 1.6 - http://www.openstructure.org/
 
 ### Downloading the container with Singularity
 
-   `$> singularity pull -n "OpenStructure-1.6.img" docker://pescobar/openstructure:latest`
+   `$> singularity pull -n "OpenStructure-1.8.img" docker://pescobar/openstructure:latest`
 
 ### Executing the OpenStructure binary with singularity
 
-   `$> singularity exec OpenStructure-1.6.img ost -h`
+   `$> singularity exec OpenStructure-1.8.img ost -h`
 
 ### Running OpenStructure interactive session with Singularity
 
 ```
-    $> singularity exec OpenStructure-1.6.img ost -i
+    $> singularity exec OpenStructure-1.8.img ost -i
 
     ost> import ost
 ```
 
 ### Interactive shell inside the container with singularity (to browse the contents)
 
-   `$> singularity shell OpenStructure-1.6.img`
+   `$> singularity shell OpenStructure-1.8.img`
 
 By default you would open the Singularity container with RO permissions. To get a shell with
 write permission use the `-w` flag:
 
-   `$> singularity shell -w OpenStructure-1.6.img`
+   `$> singularity shell -w OpenStructure-1.8.img`
 
