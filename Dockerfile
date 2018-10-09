@@ -10,7 +10,7 @@ ENV PYTHONPATH="/usr/local/lib64/python2.7/site-packages/:${PYTHONPATH}"
 ENV LD_LIBRARY_PATH="/usr/local/lib64/:/usr/local/openmm/lib/:${LD_LIBRARY_PATH}"
 ENV PATH="/usr/local/openmm/bin/:${PATH}"
 
-ENV CPUS_FOR_MAKE=2
+ENV CPUS_FOR_MAKE=1
 
 RUN yum makecache fast && \
     yum -y install epel-release && \
@@ -35,6 +35,7 @@ RUN yum makecache fast && \
     mesa-libGL-devel \
     mesa-libGLU-devel \
     numpy \
+    openblas-devel \
     pcre-devel \
     PyQt4 \
     python-devel \
